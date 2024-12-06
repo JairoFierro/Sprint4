@@ -40,21 +40,21 @@ services:
 upstreams:
   - name: reportes_upstream
     targets:
-      - target: 10.128.0.84:8080
+      - target: 10.128.0.86:8080
         weight: 100
 
   - name: instituciones_upstream
     targets:
-      - target: 10.128.0.85:8080
+      - target: 10.128.0.87:8080
         weight: 100
 
     - name: facturacion_upstream
     targets:
-      - target: 10.128.0.84:8080
+      - target: 10.128.0.88:8080
         weight: 100
 
   - name: notificacion_upstream
     targets:
-      - target: 10.128.0.85:8080
+      - target: 10.138.0.5:8080
         weight: 100
   
