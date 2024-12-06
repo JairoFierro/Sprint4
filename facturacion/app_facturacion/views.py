@@ -2,9 +2,7 @@ from django.shortcuts import render, redirect
 from .models import Factura, Recibo
 from .forms import FacturaForm, ReciboForm
 # app_facturacion/views.py
-from institucion.app_institucion.models import Estudiante
 
-# Ahora puedes usar el modelo Estudiante aquí
 def crear_factura(request):
     if request.method == 'POST':
         form = FacturaForm(request.POST)
