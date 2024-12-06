@@ -132,3 +132,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 PATH_API_GATEWAY = "http://" + os.environ.get("KONG_HOST", "10.128.0.81") + ":" + os.environ.get("KONG_PORT", "8000")
 PATH_VAR = PATH_API_GATEWAY + "/facturacion"
+RABBITMQ = {
+    'HOST': '34.169.67.145',
+    'PORT': 8080,
+    'USER': 'guest',
+    'PASSWORD': 'guest',
+    'QUEUE': 'notificaciones'
+}
