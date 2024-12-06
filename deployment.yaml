@@ -339,7 +339,7 @@ resources:
 - name: msd-notificacion-ms
   type: compute.v1.instance
   properties:
-    zone: us-central1-a
+    zone: us-west1-a
     machineType: https://www.googleapis.com/compute/v1/projects/ofipensiones-443615/zones/us-central1-a/machineTypes/e2-micro
     disks:
     - deviceName: boot
