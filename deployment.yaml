@@ -107,7 +107,7 @@ resources:
           sudo mkdir /home/proyecto
           cd /home/proyecto
           sudo git clone https://github.com/JairoFierro/Sprint4.git
-          cd ofipensiones
+          cd Sprint4
           docker network create kong-net
           docker run -d --name kong --network=kong-net --restart=always \
           -v "$(pwd):/kong/declarative/" -e "KONG_DATABASE=off" \
@@ -259,7 +259,7 @@ resources:
           sudo mkdir /home/proyecto
           cd /home/proyecto
           sudo git clone https://github.com/JairoFierro/Sprint4.git
-          cd ofipensiones/reportes
+          cd Sprint4/reportes
           sudo pip3 install -r requirements.txt
           sudo python3 manage.py makemigrations
           sudo python3 manage.py migrate
@@ -295,7 +295,7 @@ resources:
           sudo mkdir /home/proyecto
           cd /home/proyecto
           sudo git clone https://github.com/JairoFierro/Sprint4.git
-          cd ofipensiones/instituciones
+          cd Sprint4/instituciones
           sudo pip3 install -r requirements.txt
           sudo python3 manage.py makemigrations
           sudo python3 manage.py migrate
@@ -331,7 +331,7 @@ resources:
           sudo mkdir /home/proyecto
           cd /home/proyecto
           sudo git clone https://github.com/JairoFierro/Sprint4.git
-          cd ofipensiones/facturacion
+          cd Sprint4/facturacion
           sudo pip3 install -r requirements.txt
           sudo python3 manage.py makemigrations
           sudo python3 manage.py migrate
@@ -367,7 +367,7 @@ resources:
           sudo mkdir /home/proyecto
           cd /home/proyecto
           sudo git clone https://github.com/JairoFierro/Sprint4.git
-          cd ofipensiones/notificaciones
+          cd Sprint4/notificaciones
           sudo pip3 install -r requirements.txt
           sudo python3 manage.py makemigrations
           sudo python3 manage.py migrate
