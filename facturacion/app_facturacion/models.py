@@ -3,6 +3,7 @@ from django.db import models
 from django.db import models
 from datetime import date
 from institucion.app_institucion.models import Estudiante
+from institucion.app_institucion.models import Estudiante
 
 
 class Factura(models.Model):
