@@ -29,6 +29,7 @@ services:
           - /crear-factura
           - /listar-facturas
           - /crear-recibo
+          - /crear-estudiante
         strip_path: false
 
   - name: notificacion_service
