@@ -27,8 +27,8 @@ services:
         paths:
           - /facturacion
           - /crear-factura
-          - /listar_facturas
-          - /crear_recibo
+          - /listar-facturas
+          - /crear-recibo
         strip_path: false
 
   - name: notificacion_service
