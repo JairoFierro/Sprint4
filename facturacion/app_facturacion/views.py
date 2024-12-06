@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import Estudiante, Factura, Recibo
-from .forms import EstudianteForm, FacturaForm, ReciboForm
+from .forms import FacturaForm, ReciboForm
 
 def crear_factura(request):
     if request.method == 'POST':
@@ -10,9 +10,7 @@ def crear_factura(request):
             return redirect('listar_facturas')
     else:
         form = FacturaForm()
-    
-    estudiantes = Estudiante.objects.all()  # Obtiene todos los estudiantes
-    return render(request, 'facturacion/crear_factura.html', {'form': form, 'estudiantes': estudiantes})
+    return render(request, 'facturacion/crear_factura.html', {'form': form})
 
 def listar_facturas(request):
     facturas = Factura.objects.all()
@@ -33,4 +31,3 @@ def crear_recibo(request, factura_id):
 
 def vista_principal(request):
     return render(request, 'facturacion/vista_principal.html')  
-

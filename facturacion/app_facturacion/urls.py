@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import crear_factura, listar_facturas, crear_recibo,vista_principal,crear_estudiante
+from .views import crear_factura, listar_facturas, crear_recibo,vista_principal
 
 urlpatterns = [
     path('crear-factura/', crear_factura, name='crear_factura'),
