@@ -1,3 +1,65 @@
-<!-- facturacion/app_facturacion/templates/facturacion/vista_principal.html -->
-<h1>Bienvenido a la página de Facturación</h1>
-<p>Esta es la vista principal de la facturación.</p>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facturación</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            margin: 15px 0;
+        }
+        a {
+            text-decoration: none;
+            color: #007BFF;
+            font-weight: bold;
+            border: 2px solid #007BFF;
+            border-radius: 5px;
+            padding: 10px 20px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        a:hover {
+            background-color: #007BFF;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Bienvenido al Sistema de Facturación</h1>
+        <p>Seleccione una de las siguientes opciones:</p>
+        <ul>
+            <li><a href="{% url 'crear_factura' %}">Crear Factura</a></li>
+            <li><a href="{% url 'listar_facturas' %}">Listar Facturas</a></li>
+            <li><a href="#" onclick="seleccionarFactura()">Crear Recibo (Requiere ID de Factura)</a></li>
+        </ul>
+    </div>
+
+    <script>
+        function seleccionarFactura() {
+            const facturaId = prompt("Por favor, ingrese el ID de la factura:");
+            if (facturaId) {
+                window.location.href = `/crear-recibo/${facturaId}/`;
+            }
+        }
+    </script>
+</body>
+</html>
