@@ -61,7 +61,40 @@
     </style>
 </head>
 <body>
-    <h2>Crear Institución</h2>
+    <div class="container mt-5">
+        <h1>Crear Institución</h1>
+        
+        <!-- Verifica si hay errores en el formulario y los muestra -->
+        {% if form.errors %}
+            <div class="alert alert-danger">
+                <ul>
+                    {% for field in form %}
+                        {% for error in field.errors %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+
+        <form method="POST">
+            {% csrf_token %}
+            
+            <!-- Itera a través de los campos del formulario -->
+            <div class="form-group">
+                {{ form.as_p }}
+            </div>
+
+            <button type="submit" class="btn btn-primary">Crear Institución</button>
+        </form>
+
+        <br>
+        <a href="{% url 'listar_instituciones' %}" class="btn btn-secondary">Volver a Instituciones</a>
+    </div>
+
+    <!-- Scripts de Bootstrap (opcional) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
 
