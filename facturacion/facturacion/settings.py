@@ -134,7 +134,7 @@ PATH_API_GATEWAY = "http://" + os.environ.get("KONG_HOST", "10.128.0.81") + ":" 
 PATH_VAR = PATH_API_GATEWAY + "/facturacion"
 RABBITMQ = {
     'HOST': '34.169.67.145',
-    'PORT': 8080,
+    'PORT': 5672,
     'USER': 'guest',
     'PASSWORD': 'guest',
     'QUEUE': 'notificaciones'
