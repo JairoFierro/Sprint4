@@ -47,9 +47,9 @@
         <h1>Bienvenido al Sistema de Facturación</h1>
         <p>Seleccione una de las siguientes opciones:</p>
         <ul>
-            <li><a href="{% url 'crear_factura' %}">Crear Factura</a></li>
-            <li><a href="{% url 'listar_facturas' %}">Listar Facturas</a></li>
-            <li><a href="#" onclick="seleccionarFactura()">Crear Recibo (Requiere ID de Factura)</a></li>
+            <li><a href="{% url 'crear_factura' %}">Crear Factura</a></li>  <!-- Enlace a la vista de crear factura -->
+            <li><a href="{% url 'listar_facturas' %}">Listar Facturas</a></li>  <!-- Enlace a la vista de listar facturas -->
+            <li><a href="#" onclick="seleccionarFactura()">Crear Recibo (Requiere ID de Factura)</a></li>  <!-- Llama a la función para crear recibo -->
         </ul>
     </div>
 
@@ -57,7 +57,7 @@
         function seleccionarFactura() {
             const facturaId = prompt("Por favor, ingrese el ID de la factura:");
             if (facturaId) {
-                window.location.href = `/crear-recibo/${facturaId}/`;
+                window.location.href = `/crear-recibo/${facturaId}/`;  // Redirige a la vista de crear recibo con el ID ingresado
             }
         }
     </script>
