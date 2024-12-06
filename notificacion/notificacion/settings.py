@@ -128,7 +128,7 @@ PATH_VAR = PATH_API_GATEWAY + "/notificacion"
 RABBITMQ = {
     'HOST': 'localhost',
     'PORT': 5672,         
-    'USER': 'guest',
+    'USER': 'nuevo_usuario',
     'PASSWORD': 'guest',
-    'QUEUE': 'notificaciones'
+    'QUEUE': 'nueva_contraseña'
 }

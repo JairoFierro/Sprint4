@@ -39,23 +39,31 @@ def vista_principal(request):
     return render(request, 'facturacion/vista_principal.html')  
 
 def enviar_notificacion(factura):
-    connection = pika.BlockingConnection(
-        pika.ConnectionParameters(host=settings.RABBITMQ['HOST'])
-    )
-    channel = connection.channel()
+    try:
+        connection = pika.BlockingConnection(
+            pika.ConnectionParameters(
+                host=settings.RABBITMQ['HOST'],
+                port=settings.RABBITMQ['PORT'],
+                credentials=pika.PlainCredentials(settings.RABBITMQ['USER'], settings.RABBITMQ['PASSWORD'])
+            )
+        )
+        channel = connection.channel()
 
-    channel.queue_declare(queue=settings.RABBITMQ['QUEUE'])
+        channel.queue_declare(queue=settings.RABBITMQ['QUEUE'])
 
-    mensaje = {
-        'email': 'istorkyt@gmail.com',
-        'tipo': 'factura_pendiente',
-        'contenido': f'La factura {factura.id} está pendiente de pago.'
-    }
+        mensaje = {
+            'email': 'istorkyt@gmail.com',  # Correo estático como se solicitó
+            'tipo': 'factura_pendiente',
+            'contenido': f'La factura {factura.id} está pendiente de pago.'
+        }
 
-    channel.basic_publish(
-        exchange='',
-        routing_key=settings.RABBITMQ['QUEUE'],
-        body=json.dumps(mensaje)
-    )
+        channel.basic_publish(
+            exchange='',
+            routing_key=settings.RABBITMQ['QUEUE'],
+            body=json.dumps(mensaje)
+        )
 
-    connection.close()
+        connection.close()
+
+    except Exception as e:
+        print(f"Error al enviar notificación: {e}")

@@ -135,7 +135,7 @@ PATH_VAR = PATH_API_GATEWAY + "/facturacion"
 RABBITMQ = {
     'HOST': '34.169.67.145',
     'PORT': 5672,
-    'USER': 'guest',
-    'PASSWORD': 'guest',
+    'USER': 'nuevo_usuario',
+    'PASSWORD': 'nueva_contraseña',
     'QUEUE': 'notificaciones'
 }
