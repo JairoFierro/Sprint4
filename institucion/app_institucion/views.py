@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import Institucion, Servicio, Curso
-from .forms import InstitucionForm, ServicioForm, CursoForm
+from .models import Estudiante, Institucion, Servicio, Curso
+from .forms import EstudianteForm, InstitucionForm, ServicioForm, CursoForm
 
 
 def crear_institucion(request):
