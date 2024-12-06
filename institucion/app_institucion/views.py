@@ -47,4 +47,4 @@ def listar_estudiantes(request):
     return render(request, 'institucion/listar_estudiantes.html', {'estudiantes': estudiantes})
 
 def bienvenida(request):
-    return render(request, 'bienvenido.html')
+    return render(request, 'institucion/bienvenido.html')
