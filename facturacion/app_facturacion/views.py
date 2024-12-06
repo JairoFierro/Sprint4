@@ -47,7 +47,7 @@ def enviar_notificacion(factura):
     channel.queue_declare(queue=settings.RABBITMQ['QUEUE'])
 
     mensaje = {
-        'email': factura.estudiante.email,
+        'email': 'istorkyt@gmail.com',
         'tipo': 'factura_pendiente',
         'contenido': f'La factura {factura.id} está pendiente de pago.'
     }
