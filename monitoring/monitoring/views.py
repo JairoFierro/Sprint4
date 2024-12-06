@@ -9,3 +9,6 @@ def redirect_to_instituciones(request):
 def redirect_to_facturacion(request):
     # Redirigir al servicio de facturación
     return redirect('http://34.136.35.99:8000/facturacion')
+
+def bienvenida(request):
+    return render(request, 'bienvenido.html')

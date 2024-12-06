@@ -22,6 +22,7 @@ from institucion.app_institucion import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', views.bienvenida, name='bienvenida'),
     path('instituciones/', views.vista_principal, name='instituciones'),
     path('facturacion/', views.redirect_to_facturacion, name='facturacion'),
 ]
