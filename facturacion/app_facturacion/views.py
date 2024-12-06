@@ -1,6 +1,10 @@
 from django.shortcuts import render, redirect
-from .models import Estudiante, Factura, Recibo
+from .models import Factura, Recibo
 from .forms import FacturaForm, ReciboForm
+import pika
+import json
+from django.conf import settings
+# app_facturacion/views.py
 
 def crear_factura(request):
     if request.method == 'POST':
@@ -31,3 +35,28 @@ def crear_recibo(request, factura_id):
 
 def vista_principal(request):
     return render(request, 'facturacion/vista_principal.html')  
+
+def enviar_notificacion(factura):
+    connection = pika.BlockingConnection(
+        pika.ConnectionParameters(host=settings.RABBITMQ['HOST'])
+    )
+    channel = connection.channel()
+
+    # Declarar la cola (asegurarse de que exista)
+    channel.queue_declare(queue=settings.RABBITMQ['QUEUE'])
+
+    # Crear el mensaje
+    mensaje = {
+        'email': factura.estudiante.email,
+        'tipo': 'factura_pendiente',
+        'contenido': f'La factura {factura.id} está pendiente de pago.'
+    }
+
+    # Publicar el mensaje
+    channel.basic_publish(
+        exchange='',
+        routing_key=settings.RABBITMQ['QUEUE'],
+        body=json.dumps(mensaje)
+    )
+
+    connection.close()

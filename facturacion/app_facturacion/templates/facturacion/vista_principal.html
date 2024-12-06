@@ -1,3 +1,119 @@
-<!-- facturacion/app_facturacion/templates/facturacion/vista_principal.html -->
-<h1>Bienvenido a la página de Facturación</h1>
-<p>Esta es la vista principal de la facturación.</p>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facturación</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            background-color: #f9f9fb;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        /* Encabezado */
+        .header {
+            background-color: #4CAF50; /* Verde suave */
+            color: white;
+            padding: 20px 0;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 28px;
+            font-weight: 500;
+        }
+
+        /* Contenedor principal */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        /* Títulos */
+        h1 {
+            color: #333;
+            font-size: 24px;
+            font-weight: 500;
+        }
+
+        p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        /* Lista */
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin: 15px 0;
+        }
+
+        /* Enlaces / Botones */
+        a {
+            text-decoration: none;
+            color: #4CAF50;
+            font-weight: bold;
+            border: 2px solid #4CAF50;
+            border-radius: 5px;
+            padding: 10px 20px;
+            transition: background-color 0.3s, color 0.3s;
+            display: inline-block;
+        }
+
+        a:hover {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        /* Separación entre botones */
+        li + li {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Sistema de Facturación</h1>
+    </div>
+
+    <div class="container">
+        <h1>Bienvenido al Sistema de Facturación</h1>
+        <p>Seleccione una de las siguientes opciones:</p>
+        <ul>
+            <li>
+                <a href="{% url 'crear_factura' %}">Crear Factura</a>
+            </li>
+            <li>
+                <a href="{% url 'listar_facturas' %}">Listar Facturas</a>
+            </li>
+            <li>
+                <a href="#" onclick="seleccionarFactura()">Crear Recibo (Requiere ID de Factura)</a>
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        // Función para solicitar el ID de la factura y redirigir a la vista correspondiente
+        function seleccionarFactura() {
+            const facturaId = prompt("Por favor, ingrese el ID de la factura:");
+            if (facturaId) {
+                window.location.href = `/crear-recibo/${facturaId}/`;
+            }
+        }
+    </script>
+</body>
+</html>

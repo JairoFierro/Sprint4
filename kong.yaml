@@ -16,7 +16,8 @@ services:
     routes:
       - name: instituciones
         paths:
-          - /instituciones
+          - /
+          - /crear-estudiante
         strip_path: false
 
   - name: facturacion_service
@@ -26,6 +27,10 @@ services:
       - name: facturacion
         paths:
           - /facturacion
+          - /crear-factura
+          - /listar-facturas
+          - /crear-recibo
+          - /crear-estudiante
         strip_path: false
 
   - name: notificacion_service
@@ -36,6 +41,11 @@ services:
         paths:
           - /notificacion
         strip_path: false
+        
+
+
+
+
     
 upstreams:
   - name: reportes_upstream
@@ -57,3 +67,8 @@ upstreams:
     targets:
       - target: 10.138.0.5:8080
         weight: 100
+
+
+
+
+

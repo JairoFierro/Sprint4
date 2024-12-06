@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 from pathlib import Path
 import os
+import sys
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -81,8 +83,8 @@ DATABASES = {
         'NAME': os.environ.get("FACTURACION_DB", "facturacion_db"),
         'USER': os.environ.get("FACTURACION_DB_USER", "facturacion_user"),
         'PASSWORD': os.environ.get("FACTURACION_DB_PASSWD", "isis2503"),
-        'HOST': os.environ.get("MEASUREMENTS_DB_HOST", "10.128.0.84"),
-        'PORT': os.environ.get("MEASUREMENTS_DB_PORT", "5432")
+        'HOST': os.environ.get("FACTURACION_DB_HOST", "10.128.0.84"),
+        'PORT': os.environ.get("FACTURACION_DB_PORT", "5432")
     }
 }
 
