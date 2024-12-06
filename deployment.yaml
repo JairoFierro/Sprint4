@@ -260,7 +260,7 @@ resources:
           cd /home/proyecto
           sudo git clone https://github.com/JairoFierro/Sprint4.git
           cd Sprint4/reportes
-          sudo pip3 install -r requirements.txt
+          sudo pip3 install -r requeriments.txt
           sudo python3 manage.py makemigrations
           sudo python3 manage.py migrate
 
@@ -296,7 +296,7 @@ resources:
           cd /home/proyecto
           sudo git clone https://github.com/JairoFierro/Sprint4.git
           cd Sprint4/instituciones
-          sudo pip3 install -r requirements.txt
+          sudo pip3 install -r requeriments.txt
           sudo python3 manage.py makemigrations
           sudo python3 manage.py migrate
 
@@ -332,7 +332,7 @@ resources:
           cd /home/proyecto
           sudo git clone https://github.com/JairoFierro/Sprint4.git
           cd Sprint4/facturacion
-          sudo pip3 install -r requirements.txt
+          sudo pip3 install -r requeriments.txt
           sudo python3 manage.py makemigrations
           sudo python3 manage.py migrate
 
@@ -368,6 +368,6 @@ resources:
           cd /home/proyecto
           sudo git clone https://github.com/JairoFierro/Sprint4.git
           cd Sprint4/notificaciones
-          sudo pip3 install -r requirements.txt
+          sudo pip3 install -r requeriments.txt
           sudo python3 manage.py makemigrations
           sudo python3 manage.py migrate
