@@ -48,3 +48,6 @@ def listar_estudiantes(request):
 
 def bienvenida(request):
     return render(request, 'institucion/bienvenido.html')
+
+def institucion(request):
+    return render(request, 'institucion/institucion.html')
