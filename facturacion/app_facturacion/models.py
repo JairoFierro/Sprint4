@@ -2,12 +2,10 @@ from django.db import models
 
 from django.db import models
 from datetime import date
-from institucion.app_institucion.models import Estudiante
-from institucion.app_institucion.models import Estudiante
+
 
 
 class Factura(models.Model):
-    estudiante = models.ForeignKey(Estudiante, on_delete=models.CASCADE)
     fecha_emision = models.DateField(auto_now_add=True)
     monto_total = models.DecimalField(max_digits=10, decimal_places=2)
     fecha_vencimiento = models.DateField()  # Nuevo campo para la fecha de vencimiento
@@ -33,7 +31,7 @@ class Factura(models.Model):
             return 'Pendiente'
 
     def __str__(self):
-        return f'Factura {self.id} - {self.estudiante.nombre} - Estado Actual: {self.estado_actual()}'
+        return f'Factura {self.id} - Estado Actual: {self.estado_actual()}'
 
 class Recibo(models.Model):
     factura = models.ForeignKey(Factura, on_delete=models.CASCADE)
