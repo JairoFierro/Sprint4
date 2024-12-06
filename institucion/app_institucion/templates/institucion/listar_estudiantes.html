@@ -77,23 +77,5 @@
 </head>
 <body>
     <h1>Lista de Estudiantes</h1>
-    <ul>
-        {% for estudiante in estudiantes %}
-            <li>
-                <span>{{ estudiante.nombre }}</span>
-                <span>{{ estudiante.email }}</span>
-            </li>
-        {% empty %}
-            <li class="empty">No hay estudiantes registrados.</li>
-        {% endfor %}
-    </ul>
-    <div class="button-group">
-        <a href="{% url 'crear_estudiante' %}">
-            <button>Crear Estudiante</button>
-        </a>
-        <a href="{% url 'crear_institucion' %}">
-            <button class="btn-secondary">Crear Institución</button>
-        </a>
-    </div>
 </body>
 </html>

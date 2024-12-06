@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from .models import Institucion, Servicio, Curso
 from .forms import InstitucionForm, ServicioForm, CursoForm
 
+
 def crear_institucion(request):
     if request.method == 'POST':
         form = InstitucionForm(request.POST)
@@ -27,9 +28,7 @@ def actualizar_institucion(request, institucion_id):
         form = InstitucionForm(instance=institucion)
     return render(request, 'institucion/crear_institucion.html', {'form': form})
 
-from django.shortcuts import render, redirect
-from .models import Estudiante
-from .forms import EstudianteForm
+
 
 def crear_estudiante(request):
     if request.method == 'POST':

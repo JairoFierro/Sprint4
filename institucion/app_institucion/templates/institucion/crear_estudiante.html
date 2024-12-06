@@ -61,19 +61,5 @@
     </style>
 </head>
 <body>
-    <h2>Crear Estudiante</h2>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Guardar</button>
-    </form>
-    <div class="button-group">
-        <a href="{% url 'crear_institucion' %}">
-            <button type="button" class="btn-secondary">Crear Institución</button>
-        </a>
-        <a href="{% url 'listar_estudiantes' %}">
-            <button type="button" class="btn-secondary">Volver a Estudiantes</button>
-        </a>
-    </div>
 </body>
 </html>
