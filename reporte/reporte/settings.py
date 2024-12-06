@@ -76,8 +76,8 @@ WSGI_APPLICATION = 'reporte.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': os.environ.get("REPORTE_DB", "reporte_db"),
-        'USER': os.environ.get("REPORTE_DB_USER", "reporte_user"),
+        'NAME': os.environ.get("REPORTE_DB", "reportes_db"),
+        'USER': os.environ.get("REPORTE_DB_USER", "reportes_user"),
         'PASSWORD': os.environ.get("REPORTE_DB_PASSWD", "isis2503"),
         'HOST': os.environ.get("REPORTE_DB_HOST", "10.128.0.83"),
         'PORT': os.environ.get("REPORTE_DB_PORT", "5432")
