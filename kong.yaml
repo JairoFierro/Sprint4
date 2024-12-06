@@ -17,6 +17,7 @@ services:
       - name: instituciones
         paths:
           - /instituciones
+          - /crear-estudiante
         strip_path: false
 
   - name: facturacion_service
