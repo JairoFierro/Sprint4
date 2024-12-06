@@ -27,4 +27,21 @@ def actualizar_institucion(request, institucion_id):
         form = InstitucionForm(instance=institucion)
     return render(request, 'institucion/crear_institucion.html', {'form': form})
 
-# Similarmente, puedes crear vistas para Servicios y Cursos
+from django.shortcuts import render, redirect
+from .models import Estudiante
+from .forms import EstudianteForm
+
+def crear_estudiante(request):
+    if request.method == 'POST':
+        form = EstudianteForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('listar_estudiantes')  
+    else:
+        form = EstudianteForm()
+    
+    return render(request, 'institucion/crear_estudiante.html', {'form': form})
+# institucion/app_institucion/views.py
+def listar_estudiantes(request):
+    estudiantes = Estudiante.objects.all()
+    return render(request, 'institucion/listar_estudiantes.html', {'estudiantes': estudiantes})

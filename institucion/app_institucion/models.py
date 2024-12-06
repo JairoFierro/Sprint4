@@ -27,3 +27,11 @@ class Curso(models.Model):
 
     def __str__(self):
         return self.nombre
+    
+class Estudiante(models.Model):
+    nombre = models.CharField(max_length=100)
+    email = models.EmailField()
+    telefono = models.CharField(max_length=15, blank=True, null=True)  # Campo opcional
+
+    def __str__(self):
+        return self.nombre

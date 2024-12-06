@@ -2,13 +2,8 @@ from django.db import models
 
 from django.db import models
 from datetime import date
+from institucion.app_institucion.models import Estudiante
 
-class Estudiante(models.Model):
-    nombre = models.CharField(max_length=100)
-    email = models.EmailField()
-
-    def __str__(self):
-        return self.nombre
 
 class Factura(models.Model):
     estudiante = models.ForeignKey(Estudiante, on_delete=models.CASCADE)

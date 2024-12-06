@@ -1,0 +1,17 @@
+<!-- institucion/app_institucion/templates/institucion/crear_estudiante.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Estudiante</title>
+</head>
+<body>
+    <h2>Crear Estudiante</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Guardar</button>
+    </form>
+</body>
+</html>
