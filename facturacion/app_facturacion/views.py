@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
-from .models import Estudiante, Factura, Recibo
+from .models import Factura, Recibo
 from .forms import FacturaForm, ReciboForm
+# app_facturacion/views.py
 
 def crear_factura(request):
     if request.method == 'POST':

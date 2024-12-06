@@ -24,7 +24,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-zsp@=j=ofmls$abas)_=$=yems6q)&kwx&+w)(4umy(0)!1y1n'
-sys.path.append(os.path.join(BASE_DIR, 'institucion'))
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -42,7 +41,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'app_facturacion',
-    'institucion',
     ]
 
 MIDDLEWARE = [

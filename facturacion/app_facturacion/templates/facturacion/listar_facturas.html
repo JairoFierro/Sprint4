@@ -93,7 +93,6 @@
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Estudiante</th>
                     <th>Monto Total</th>
                     <th>Estado</th>
                     <th>Acciones</th>
@@ -103,7 +102,6 @@
                 {% for factura in facturas %}
                 <tr>
                     <td>{{ factura.id }}</td>
-                    <td>{{ factura.estudiante.nombre }}</td>
                     <td>{{ factura.monto_total }}</td>
                     <td>{{ factura.estado }}</td>
                     <td>
