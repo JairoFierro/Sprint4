@@ -4,13 +4,14 @@ from .forms import FacturaForm, ReciboForm
 import pika
 import json
 from django.conf import settings
+
 # app_facturacion/views.py
 
 def crear_factura(request):
     if request.method == 'POST':
         form = FacturaForm(request.POST)
         if form.is_valid():
-            factura=form.save()
+            factura = form.save()
             enviar_notificacion(factura)
             return redirect('listar_facturas')
     else:
