@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'institucion'
 ]
 
 MIDDLEWARE = [
@@ -76,8 +77,12 @@ WSGI_APPLICATION = 'institucion.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': os.environ.get("INSTITUCION_DB", "instituciones_db"),
+        'USER': os.environ.get("INSTITUCION_DB_USER", "instituciones_user"),
+        'PASSWORD': os.environ.get("INSTITUCION_DB_PASSWD", "isis2503"),
+        'HOST': os.environ.get("INSTITUCION_DB_HOST", "10.128.0.83"),
+        'PORT': os.environ.get("INSTITUCION_DB_PORT", "5432")
     }
 }
 
