@@ -1,32 +1,118 @@
-<!-- facturacion/app_facturacion/templates/facturacion/listar_facturas.html -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Listar Facturas</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            background-color: #f9f9fb;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Contenedor principal */
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #4CAF50;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        /* Estilo de la tabla */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+            font-weight: 500;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        td a {
+            text-decoration: none;
+            color: #007BFF;
+            font-weight: bold;
+        }
+
+        td a:hover {
+            text-decoration: underline;
+        }
+
+        /* Botón superior */
+        .back-button {
+            display: inline-block;
+            margin-bottom: 20px;
+            padding: 10px 15px;
+            color: white;
+            background-color: #6c757d;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .back-button:hover {
+            background-color: #5a6268;
+        }
+    </style>
 </head>
 <body>
-    <h1>Lista de Facturas</h1>
-    <table>
-        <tr>
-            <th>ID</th>
-            <th>Estudiante</th>
-            <th>Monto Total</th>
-            <th>Estado</th>
-            <th>Acciones</th>
-        </tr>
-        {% for factura in facturas %}
-        <tr>
-            <td>{{ factura.id }}</td>
-            <td>{{ factura.estudiante.nombre }}</td>
-            <td>{{ factura.monto_total }}</td>
-            <td>{{ factura.estado }}</td>
-            <td>
-                <a href="{% url 'crear_recibo' factura.id %}">Crear Recibo</a>
-            </td>
-        </tr>
-        {% endfor %}
-    </table>
+    <div class="container">
+        <a href="#" class="back-button" onclick="window.history.back();">Volver</a>
+        <h1>Lista de Facturas</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Estudiante</th>
+                    <th>Monto Total</th>
+                    <th>Estado</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for factura in facturas %}
+                <tr>
+                    <td>{{ factura.id }}</td>
+                    <td>{{ factura.estudiante.nombre }}</td>
+                    <td>{{ factura.monto_total }}</td>
+                    <td>{{ factura.estado }}</td>
+                    <td>
+                        <a href="{% url 'crear_recibo' factura.id %}">Crear Recibo</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
 </body>
 </html>
