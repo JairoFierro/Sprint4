@@ -8,11 +8,7 @@ def consumir_mensajes():
         pika.ConnectionParameters(host=settings.RABBITMQ['HOST'])
     )
     channel = connection.channel()
-
-    # Declarar la cola (asegurarse de que exista)
     channel.queue_declare(queue=settings.RABBITMQ['QUEUE'])
-
-    # Función de callback para procesar los mensajes
     def procesar_mensaje(ch, method, properties, body):
         mensaje = json.loads(body)
         enviar_correo(
@@ -21,12 +17,9 @@ def consumir_mensajes():
             mensaje['contenido']
         )
         ch.basic_ack(delivery_tag=method.delivery_tag)
-
-    # Consumir mensajes
     channel.basic_consume(
         queue=settings.RABBITMQ['QUEUE'], on_message_callback=procesar_mensaje
     )
-
     print("Esperando mensajes...")
     channel.start_consuming()
 
