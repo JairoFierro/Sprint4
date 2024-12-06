@@ -61,5 +61,30 @@
     </style>
 </head>
 <body>
+    <h2>Crear Institucion</h2>
+    <form method="post">
+        {% csrf_token %}
+        <label for="nombre">Nombre de la institución:</label>
+        <input type="text" name="nombre" required>
+
+        <label for="direccion">Dirección de la institución:</label>
+        <input type="text" name="direccion" required>
+
+        <label for="telefono">Telefono:</label>
+        <input type="text" name="telefono" required>
+
+        <label for="email">Email:</label>
+        <input type="text" name="email" required>
+
+        <label for="descripcion">Descripcion:</label>
+        <input type="text" name="descripcion" required>
+
+        <button type="submit">Guardar</button>
+    </form>
+    <div class="button-group">
+        <a href="{% url 'listar_instituciones' %}">
+            <button type="button" class="btn-secondary">volver a Instituciones</button>
+        </a>
+    </div>
 </body>
 </html>
