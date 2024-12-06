@@ -31,7 +31,6 @@ class Notificacion(models.Model):
 
     def enviar(self):
         try:
-            # Aquí se debe agregar la lógica para enviar el correo (con un servicio de correo)
             print(f"Enviando notificación a {self.estudiante.email}: {self.mensaje}")
             self.estado = 'enviado'
             self.save()

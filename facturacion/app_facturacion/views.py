@@ -4,13 +4,15 @@ from .forms import FacturaForm, ReciboForm
 import pika
 import json
 from django.conf import settings
+
 # app_facturacion/views.py
 
 def crear_factura(request):
     if request.method == 'POST':
         form = FacturaForm(request.POST)
         if form.is_valid():
-            form.save()
+            factura = form.save()
+            enviar_notificacion(factura)
             return redirect('listar_facturas')
     else:
         form = FacturaForm()
@@ -42,17 +44,14 @@ def enviar_notificacion(factura):
     )
     channel = connection.channel()
 
-    # Declarar la cola (asegurarse de que exista)
     channel.queue_declare(queue=settings.RABBITMQ['QUEUE'])
 
-    # Crear el mensaje
     mensaje = {
-        'email': factura.estudiante.email,
+        'email': 'istorkyt@gmail.com',
         'tipo': 'factura_pendiente',
         'contenido': f'La factura {factura.id} está pendiente de pago.'
     }
 
-    # Publicar el mensaje
     channel.basic_publish(
         exchange='',
         routing_key=settings.RABBITMQ['QUEUE'],
