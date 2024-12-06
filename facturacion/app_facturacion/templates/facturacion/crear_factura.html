@@ -1,90 +1,40 @@
+<!-- facturacion/app_facturacion/templates/facturacion/crear_factura.html -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crear Factura</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap" rel="stylesheet">
-    <style>
-        /* Estilos generales */
-        body {
-            font-family: 'Roboto', Arial, sans-serif;
-            background-color: #f9f9fb;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-
-        /* Contenedor principal */
-        .container {
-            background-color: #fff;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            max-width: 400px;
-            width: 100%;
-            text-align: center;
-        }
-
-        /* Título */
-        h2 {
-            color: #4CAF50; /* Verde suave */
-            font-size: 24px;
-            font-weight: 500;
-            margin-bottom: 20px;
-        }
-
-        /* Formulario */
-        form {
-            display: flex;
-            flex-direction: column;
-        }
-
-        form p {
-            margin-bottom: 15px;
-            text-align: left;
-        }
-
-        /* Botones */
-        button {
-            margin-top: 15px;
-            padding: 10px 15px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-            transition: all 0.3s ease;
-        }
-
-        button[type="submit"] {
-            background-color: #4CAF50;
-            color: white;
-            font-weight: bold;
-        }
-
-        button.back {
-            background-color: #6c757d;
-            color: white;
-            font-weight: bold;
-        }
-
-        button:hover {
-            opacity: 0.9;
-        }
-    </style>
 </head>
 <body>
-    <div class="container">
-        <h2>Crear Factura</h2>
-        <form method="post">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <button type="submit">Guardar</button>
-            <button type="button" class="back" onclick="window.history.back();">Volver</button>
-        </form>
-    </div>
+    <h2>Crear Factura</h2>
+    <form method="post">
+        {% csrf_token %}
+        <label for="estudiante">Estudiante:</label>
+        <select name="estudiante" id="estudiante" required>
+            {% for estudiante in estudiantes %}
+                <option value="{{ estudiante.id }}">{{ estudiante.nombre }}</option>
+            {% endfor %}
+        </select>
+        <br>
+
+        <label for="monto_total">Monto Total:</label>
+        <input type="number" name="monto_total" step="0.01" required>
+        <br>
+
+        <label for="fecha_vencimiento">Fecha de Vencimiento:</label>
+        <input type="date" name="fecha_vencimiento" required>
+        <br>
+
+        <label for="estado">Estado:</label>
+        <select name="estado" required>
+            <option value="pendiente">Pendiente</option>
+            <option value="pagada">Pagada</option>
+            <option value="cancelada">Cancelada</option>
+        </select>
+        <br>
+
+        <button type="submit">Guardar</button>
+    </form>
 </body>
 </html>
