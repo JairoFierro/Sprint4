@@ -28,3 +28,6 @@ def crear_recibo(request, factura_id):
     else:
         form = ReciboForm()
     return render(request, 'facturacion/crear_recibo.html', {'form': form, 'factura': factura})
+
+def vista_principal(request):
+    return render(request, 'facturacion/vista_principal.html')  
