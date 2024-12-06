@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'app_reporte',
 ]
 
 MIDDLEWARE = [
@@ -76,11 +77,11 @@ WSGI_APPLICATION = 'reporte.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': os.environ.get("REPORTE_DB", "reporte_db"),
-        'USER': os.environ.get("REPORTE_DB_USER", "reporte_user"),
-        'PASSWORD': os.environ.get("REPORTE_DB_PASSWD", "isis2503"),
-        'HOST': os.environ.get("REPORTE_DB_HOST", "10.128.0.83"),
-        'PORT': os.environ.get("REPORTE_DB_PORT", "5432")
+        'NAME': os.environ.get("REPORTES_DB", "reportes_db"),
+        'USER': os.environ.get("REPORTES_DB_USER", "reportes_user"),
+        'PASSWORD': os.environ.get("REPORTES_DB_PASSWD", "isis2503"),
+        'HOST': os.environ.get("REPORTES_DB_HOST", "10.128.0.82"),
+        'PORT': os.environ.get("REPORTES_DB_PORT", "5432")
     }
 }
 
