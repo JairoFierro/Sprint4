@@ -26,6 +26,7 @@ services:
       - name: facturacion
         paths:
           - /facturacion
+          - /crear-factura
         strip_path: false
 
   - name: notificacion_service
@@ -36,14 +37,7 @@ services:
         paths:
           - /notificacion
         strip_path: false
-  - name: facturacion_service
-    host: facturacion_upstream
-    protocol: http
-    routes:
-      - name: crear_factura_route
-        paths:
-          - /crear-factura
-        strip_path: false
+        
 
 
 
