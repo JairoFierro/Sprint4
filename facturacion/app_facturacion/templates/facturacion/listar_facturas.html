@@ -104,6 +104,8 @@
                     <td>{{ factura.id }}</td>
                     <td>{{ factura.monto_total }}</td>
                     <td>{{ factura.estado }}</td>
+                    <td>{{ factura.fecha_vencimiento }}</td>
+
                     <td>
                         <a href="{% url 'crear_recibo' factura.id %}">Crear Recibo</a>
                     </td>
