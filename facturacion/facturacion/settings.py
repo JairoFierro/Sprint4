@@ -75,8 +75,12 @@ WSGI_APPLICATION = 'facturacion.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': os.environ.get("FACTURACION_DB", "facturacion_db"),
+        'USER': os.environ.get("FACTURACION_DB_USER", "facturacion_user"),
+        'PASSWORD': os.environ.get("FACTURACION_DB_PASSWD", "isis2503"),
+        'HOST': os.environ.get("MEASUREMENTS_DB_HOST", "10.128.0.84"),
+        'PORT': os.environ.get("MEASUREMENTS_DB_PORT", "5432")
     }
 }
 
