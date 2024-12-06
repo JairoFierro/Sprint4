@@ -1,5 +1,4 @@
 from django.shortcuts import render
-from facturacion.app_facturacion.models import Factura
 
 def vista_reporte_facturas(request):
     # facturas = Factura.objects.all()
