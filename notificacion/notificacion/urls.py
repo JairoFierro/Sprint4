@@ -17,6 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from app_notificacion.views import consumir_mensajes
 urlpatterns = [
     path('admin/', admin.site.urls),
 ]
