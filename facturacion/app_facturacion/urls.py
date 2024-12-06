@@ -6,6 +6,5 @@ urlpatterns = [
     path('listar-facturas/', listar_facturas, name='listar_facturas'),
     path('crear-recibo/<int:factura_id>/', crear_recibo, name='crear_recibo'),
     path('facturacion/', vista_principal, name='facturacion_index'),  # Nueva ruta
-    path('crear-estudiante/', crear_estudiante, name='crear_estudiante'),  # Nueva ruta para crear estudiante
 
 ]
