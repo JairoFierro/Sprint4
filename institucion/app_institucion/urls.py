@@ -8,5 +8,6 @@ urlpatterns = [
     path('crear/', crear_institucion, name='crear_institucion'),  # Ruta para crear institución
     #path('actualizar/<int:institucion_id>/', actualizar_institucion, name='actualizar_institucion'),  # Ruta para actualizar
     path('crear-estudiante/', crear_estudiante, name='crear_estudiante'),  # Nueva ruta para crear estudiante
+    path('listar-instituciones/', listar_instituciones, name='listar_instituciones'),  # Add this line
 
 ]
