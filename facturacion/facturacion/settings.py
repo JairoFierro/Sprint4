@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'app_facturacion',
+    'app_institucion',  # Asegúrate de que este nombre sea correcto
     'institucion.app_institucion',  # Asegúrate de que este nombre sea correcto
     ]
 
