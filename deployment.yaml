@@ -106,7 +106,7 @@ resources:
           #!/bin/bash
           sudo mkdir /home/proyecto
           cd /home/proyecto
-          sudo git clone https://github.com/Marcosespa/sprintfinal.git
+          sudo git clone https://github.com/JairoFierro/Sprint4.git
           cd ofipensiones
           docker network create kong-net
           docker run -d --name kong --network=kong-net --restart=always \
@@ -258,7 +258,7 @@ resources:
           sudo apt install python3-pip -y
           sudo mkdir /home/proyecto
           cd /home/proyecto
-          sudo git clone https://github.com/Marcosespa/ofipensiones.git
+          sudo git clone https://github.com/JairoFierro/Sprint4.git
           cd ofipensiones/reportes
           sudo pip3 install -r requirements.txt
           sudo python3 manage.py makemigrations
@@ -294,7 +294,7 @@ resources:
           sudo apt install python3-pip -y
           sudo mkdir /home/proyecto
           cd /home/proyecto
-          sudo git clone https://github.com/Marcosespa/ofipensiones.git
+          sudo git clone https://github.com/JairoFierro/Sprint4.git
           cd ofipensiones/instituciones
           sudo pip3 install -r requirements.txt
           sudo python3 manage.py makemigrations
@@ -330,7 +330,7 @@ resources:
           sudo apt install python3-pip -y
           sudo mkdir /home/proyecto
           cd /home/proyecto
-          sudo git clone https://github.com/Marcosespa/ofipensiones.git
+          sudo git clone https://github.com/JairoFierro/Sprint4.git
           cd ofipensiones/facturacion
           sudo pip3 install -r requirements.txt
           sudo python3 manage.py makemigrations
@@ -366,7 +366,7 @@ resources:
           sudo apt install python3-pip -y
           sudo mkdir /home/proyecto
           cd /home/proyecto
-          sudo git clone https://github.com/Marcosespa/ofipensiones.git
+          sudo git clone https://github.com/JairoFierro/Sprint4.git
           cd ofipensiones/notificaciones
           sudo pip3 install -r requirements.txt
           sudo python3 manage.py makemigrations
