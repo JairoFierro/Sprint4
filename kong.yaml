@@ -36,6 +36,18 @@ services:
         paths:
           - /notificacion
         strip_path: false
+  - name: facturacion_service
+    host: facturacion_upstream
+    protocol: http
+    routes:
+      - name: crear_factura_route
+        paths:
+          - /crear-factura
+        strip_path: false
+
+
+
+
     
 upstreams:
   - name: reportes_upstream
@@ -57,3 +69,8 @@ upstreams:
     targets:
       - target: 10.138.0.5:8080
         weight: 100
+
+
+
+
+
